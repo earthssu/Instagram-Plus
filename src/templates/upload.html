@@ -1,0 +1,74 @@
+<!DOCTYPE HTML>
+<!--
+	Future Imperfect by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Future Imperfect by HTML5 UP</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="{{url_for('static',filename='css/main.css')}}" />
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1><a href="index.html">Instagram PLUS</a></h1>
+						</nav>
+						<nav class="main">
+							<ul>
+								<li class="menu">
+									<a class="fa-search" href="#menu">Menu</a>
+								</li>
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Menu -->
+                    <section id="menu">
+
+                        <!-- Search -->
+                        <section>
+                            <form class="search" method="post" action="/result">
+                                <input type="text" name="do" placeholder="Search" />
+								<br>
+                                <input type="text" name="dont" placeholder=" 🚫 Search" />
+								<br>
+								<button type="submit" name="button">SEARCH</button>
+                            </form>
+                        </section>
+                    </section>
+
+				<!-- Main -->
+					<div id="main">
+						<article class="post">
+                            <form class="search" method="post" action="/upload">
+                                <input type="text" name="user" placeholder="User" />
+								<br>
+                                <input type="text" name="comment" placeholder="Comment" />
+								<br>
+                                <input type="file" name="image"/>
+								<br>
+                                <input type="text" name="tag" placeholder="Tag" />
+								<br>
+								<button type="submit" name="button">UPLOAD</button>
+                            </form>
+                        </article>
+					</div>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="{{url_for('static',filename='js/jquery.min.js')}}"></script>
+			<script src="{{url_for('static', filename='js/browser.min.js')}}"></script>
+			<script src="{{url_for('static', filename='js/breakpoints.min.js')}}"></script>
+			<script src="{{url_for('static', filename='js/util.js')}}"></script>
+			<script src="{{url_for('static', filename='js/main.js')}}"></script>
+
+	</body>
+</html>

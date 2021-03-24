@@ -1,0 +1,78 @@
+<!DOCTYPE HTML>
+<!--
+	Future Imperfect by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Main</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="{{url_for('static',filename='css/main.css')}}" />
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1><a href="/">Instagram PLUS</a></h1>
+						</nav>
+						<nav class="main">
+							<ul>
+								<li class="menu">
+									<a class="fa-search" href="#menu">Menu</a>
+								</li>
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Menu -->
+                    <section id="menu">
+
+                        <!-- Search -->
+                        <section>
+                            <form class="search" method="post" action="/result">
+                                <input type="text" name="do" placeholder="Search" />
+								<br>
+                                <input type="text" name="dont" placeholder=" 🚫 Search" />
+								<br>
+								<button type="submit" name="button">SEARCH</button>
+                            </form>
+                        </section>
+                    </section>
+
+				<!-- Main -->
+					<div id="main">
+						{% for data in post %}
+						<article class="post">
+                            <a href="#" class="image featured"><img src="{{data.img}}"/></a>
+                            <footer>
+                                <ul class="stats">
+                                    <li><a href="#" class="icon solid fa-heart">{{data.like}}</a></li>
+                                    <li><a href="#" class="icon solid fa-comment">{{data.reply}}</a></li>
+                                </ul>
+                            </footer>
+							<span><b>{{data.user}} &nbsp;</b></span>
+							<span>{{data.comment}}</span>
+							<br>
+							{% for t in data.tag %}
+								<span>{{t}}</span> &nbsp;
+							{% endfor %}
+                        </article>
+						{% endfor %}
+					</div>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="{{url_for('static',filename='js/jquery.min.js')}}"></script>
+			<script src="{{url_for('static', filename='js/browser.min.js')}}"></script>
+			<script src="{{url_for('static', filename='js/breakpoints.min.js')}}"></script>
+			<script src="{{url_for('static', filename='js/util.js')}}"></script>
+			<script src="{{url_for('static', filename='js/main.js')}}"></script>
+
+	</body>
+</html>
